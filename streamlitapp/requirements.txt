@@ -1,0 +1,14 @@
+streamlit
+pandas
+numpy
+opencv-python
+Pillow
+scipy
+plotly
+
+
+
+
+
+
+#streamlit run app.py
