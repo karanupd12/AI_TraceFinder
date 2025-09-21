@@ -10,7 +10,7 @@
 - Studied concepts of data cleaning for preprocessing.  
 
 # ✅ Completed Work (Directory - tracefinderPred)
--Built and trained Random Forest and SVM models
--Evaluated models with classification report and confusion matrix
--Predicted scanner class from uploaded random document image
--Developed interactive Streamlit dashboard for training and prediction
+- Built and trained Random Forest and SVM models.
+- Evaluated models with classification report and confusion matrix.
+- Predicted scanner class from uploaded random document image.
+- Developed interactive Streamlit dashboard for training and prediction.
