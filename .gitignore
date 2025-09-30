@@ -8,6 +8,6 @@ venv/
 __pycache__/
 *.pyc
 
-
-tracefinderPred/pre_process
-tracefinderPred/processed_data
+# Ignore large files
+tracefinderPred/pre_process/
+tracefinderPred/processed_data/
