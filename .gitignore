@@ -7,3 +7,7 @@ venv/
 # Ignore Python cache
 __pycache__/
 *.pyc
+
+
+tracefinderPred/pre_process
+tracefinderPred/processed_data
