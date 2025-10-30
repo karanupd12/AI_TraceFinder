@@ -1,10 +1,3 @@
-"""
-EDA for Image Dataset (Local)
-Dataset structure:
-- Official, Wikipedia, Flatfield
-- Each folder contains subfolders per class or scanner
-"""
-
 import os
 import cv2
 import numpy as np
