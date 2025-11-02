@@ -1,86 +1,142 @@
-#  AI TraceFinder — Forensic Scanner Identification  
+# AI TraceFinder — Forensic Scanner Identification
 
-##  Overview  
-AI TraceFinder is a forensic machine learning platform that identifies the **source scanner device** used to digitize a document or image. Each scanner (brand/model) introduces unique **noise, texture, and compression artifacts** that serve as a fingerprint. By analyzing these patterns, AI TraceFinder enables **fraud detection, authentication, and forensic validation** in scanned documents.  
-
----
-
-##  Goals & Objectives  
-- Collect and label scanned document datasets from multiple scanners  
-- Robust preprocessing (resize, grayscale, normalize, denoise)  
-- Extract scanner-specific features (noise, FFT, PRNU, texture descriptors)  
-- Train classification models (ML + CNN)  
-- Apply explainability tools (Grad-CAM, SHAP)  
-- **Deploy an interactive app for scanner source identification**  
-- Deliver **accurate, interpretable results** for forensic and legal use cases  
+A machine learning platform that identifies the source scanner device used to digitize documents through analysis of unique noise patterns and artifacts.
 
 ---
 
-##  Methodology 
-1. **Data Collection & Labeling**  
-   - Gather scans from 3–5 scanner models/brands  
-   - Create a structured, labeled dataset  
+## Overview
 
-2. **Preprocessing**  
-   - Resize, grayscale, normalize  
-   - Optional: denoise to highlight artifacts  
-
-3. **Feature Extraction**  
-   - PRNU patterns, FFT, texture descriptors (LBP, edge features)  
-
-4. **Model Training**  
-   - Baseline ML: SVM, Random Forest, Logistic Regression  
-   - Deep Learning: CNN with augmentation  
-
-5. **Evaluation & Explainability**  
-   - Metrics: Accuracy, F1-score, Confusion Matrix  
-   - Interpretability: Grad-CAM, SHAP feature maps  
-
-6. **Deployment**  
-   - Streamlit app → upload scanned image → predict scanner model  
-   - Display confidence score and key feature regions  
+AI TraceFinder uses hybrid CNN architecture combined with handcrafted features (PRNU, FFT, LBP) to classify scanned documents across 11 scanner models with 93.65% accuracy.
 
 ---
 
-##  Actionable Insights for Forensics  
-- **Source Attribution:** Identify which scanner created a scanned copy of a document.  
-- **Fraud Detection:** Detect forgeries where unauthorized scanners were used.  
-- **Legal Verification:** Validate whether scanned evidence originated from approved devices.  
-- **Tamper Resistance:** Differentiate between authentic vs. tampered scans.  
-- **Explainability:** Provide visual evidence of how classification was made.  
+## Features
+
+- Scanner identification from scanned images
+- Multi-model support (Hybrid CNN, Random Forest, SVM)
+- Interactive Streamlit web interface
+- Batch processing capabilities
+- Real-time prediction with confidence scores
 
 ---
 
-##  Architecture (Conceptual)  
-Input ➜ Preprocessing ➜ Feature Extraction + Modeling ➜ Evaluation & Explainability ➜ Prediction App  
+## Performance
+
+**Test Accuracy: 93.65%**
+
+- Training set: 3,654 scans
+- Test set: 914 scans
+- Scanner classes: 11 models (Canon, Epson, HP)
+- Image resolution: 256×256 grayscale
+- Features: 27 handcrafted + CNN-learned patterns
+
+| Scanner Model | Precision | Recall | F1-Score |
+|---------------|-----------|--------|----------|
+| Canon120-1 | 0.91 | 0.89 | 0.90 |
+| Canon120-2 | 0.84 | 0.83 | 0.84 |
+| Canon220 | 0.89 | 0.92 | 0.90 |
+| Canon9000-1 | 0.95 | 0.87 | 0.91 |
+| Canon9000-2 | 0.88 | 0.95 | 0.91 |
+| EpsonV370-1 | 0.99 | 0.95 | 0.97 |
+| EpsonV370-2 | 0.95 | 0.99 | 0.97 |
+| EpsonV39-1 | 0.94 | 0.96 | 0.95 |
+| EpsonV39-2 | 0.96 | 0.95 | 0.96 |
+| EpsonV550 | 1.00 | 0.99 | 0.99 |
+| HP | 0.99 | 1.00 | 0.99 |
 
 ---
 
-## ⏳ 8-Week Roadmap (Milestones)  
-- **W1:** Dataset collection (min. 3–5 scanners), labeling, metadata analysis  
-- **W2:** Preprocessing pipeline (resize, grayscale, normalize, optional denoise)  
-- **W3:** Feature extraction (noise maps, FFT, LBP, texture descriptors)  
-- **W4:** Baseline ML models (SVM, RF, Logistic Regression) + evaluation  
-- **W5:** CNN model training with augmentation, hyperparameter tuning  
-- **W6:** Model evaluation (accuracy, F1, confusion matrix) + Grad-CAM/SHAP analysis  
-- **W7:** Streamlit app development → image upload, prediction, confidence output  
-- **W8:** Final documentation, results, presentation, and demo handover  
+## Installation
+
+### Prerequisites
+- Python 3.10.11
+- 8GB+ RAM recommended
+
+### Setup
+
+1. Clone the repository
+```
+git clone https://github.com/karanupd12/AI-TraceFinder.git
+cd AI-TraceFinder
+```
+
+2. Create virtual environment
+```
+python -m venv .venv
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # Linux/macOS
+```
+
+3. Install dependencies
+```
+pip install -r Requirements.txt
+```
 
 ---
 
-##  Suggested Project Structure  
-```bash
-ai-tracefinder/
-├─ app.py              
-├─ src/
-│  ├─ ingest/           
-│  ├─ preprocess/        
-│  ├─ features/          
-│  ├─ models/            
-│  ├─ explain/           
-│  └─ utils/             
-├─ data/                 
-├─ notebooks/            
-├─ reports/              
-└─ README.md
+## Usage
+
+Run the Streamlit application:
+
+```
+streamlit run streamlit_app.py
+```
+
+Then open [http://localhost:8501](http://localhost:8501) in your browser.
+
+### Features Available:
+- **EDA**: Dataset statistics and visualizations
+- **Prediction**: Upload images for scanner identification
+- **Testing**: Batch processing of multiple images
+- **Model Performance**: View classification metrics
+
+---
+
+## Dataset
+
+This project uses the [NIST OpenMFC](https://www.nist.gov/) scanner dataset containing scans from multiple device models at various DPI settings (150, 300, 600).
+
+---
+
+## Project Structure
+
+```
+AI-TraceFinder/
+├── streamlit_app.py          # Main application
+├── Data/                     # Dataset
+├── models/                   # Trained models
+├── results/                  # Performance metrics
+└── Requirements.txt          # Dependencies
+```
+
+---
+
+## Technology Stack
+
+- **Deep Learning**: TensorFlow/Keras
+- **ML**: scikit-learn (SVM, Random Forest)
+- **Frontend**: Streamlit
+- **Processing**: OpenCV, PyWavelets, NumPy
+
+---
+
+## License
+
+MIT License
+
+---
+
+## Contact
+
+**Karan Upadhyay**
+- Email: karanupd12@gmail.com
+- GitHub: [karanupd12](https://github.com/karanupd12)
+- LinkedIn: [karanupd12](https://www.linkedin.com/in/karanupd12/)
+
+---
+
+## Acknowledgments
+
+- NIST OpenMFC for the dataset
+- TensorFlow and scikit-learn communities
 ```
