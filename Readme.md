@@ -60,19 +60,19 @@ This project uses the [NIST OpenMFC](https://www.nist.gov/) scanner dataset cont
 ## 📸 Architecture & UI
 
 ### System Architecture
-![System Architecture](./images/Architecture.png)
+![System Architecture](./tracefinderPred/images/Architecture.png)
 
 ### Overview
-![Overview](./images/Overview.png)
+![Overview](./tracefinderPred/images/Overview.png)
 
 ### Exploratory Data Analysis
-![EDA](./images/EDA.png)
+![EDA](./tracefinderPred/images/EDA.png)
 
 ### Model Evaluation
-![Evaluation](./images/Evaluation.png)
+![Evaluation](./tracefinderPred/images/Evaluation.png)
 
 ### Prediction Interface
-![Prediction](./images/Prediction.png)
+![Prediction](./tracefinderPred/images/Prediction.png)
 
 ---
 
@@ -96,7 +96,7 @@ tracefinderPred/
 
 ## 📈 Accuracy & Performance
 
-- **Hybrid CNN model model accuracy**: 85%
+- **Hybrid CNN model accuracy**: 85%
 - **Overall weighted avg:** Precision: 0.858, Recall: 0.852, F1-score: 0.852
 - **Test sample:** 500 images
 - **Average Test Confidence: 93.85%**
@@ -116,8 +116,6 @@ tracefinderPred/
 ### Legal Evidence Verification
 **Description:** Ensure scanned copies submitted in court/legal matters came from known and approved devices.  
 **Example:** Verify that scanned agreements originated from the company's official scanner.
-
----
 
 ---
 
@@ -173,21 +171,15 @@ The application will open in your default web browser at `http://localhost:8501`
 
 **Karan Upadhyay**
 
-- **Email:** karanupadhyay@example.com
-- **LinkedIn:** [linkedin.com/in/karanupadhyay](https://linkedin.com/in/karanupadhyay)
-- **GitHub:** [github.com/karanupadhyay1](https://github.com/karanupadhyay1)
+- **Email:** karanupd12@gmail.com
+- **LinkedIn:** [linkedin.com/in/karanupadhyay](https://linkedin.com/in/karanupd12)
+- **GitHub:** [github.com/karanupadhyay1](https://github.com/karanupd12)
 
 ---
 
 ## 📜 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
-
-Special thanks to all contributors and the open-source community for their invaluable resources and support. This project was developed as part of forensic research to combat document forgery and enhance digital authentication systems.
 
 ---
 
