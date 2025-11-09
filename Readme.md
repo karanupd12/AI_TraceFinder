@@ -172,8 +172,8 @@ The application will open in your default web browser at `http://localhost:8501`
 **Karan Upadhyay**
 
 - **Email:** karanupd12@gmail.com
-- **LinkedIn:** [linkedin.com/in/karanupadhyay](https://linkedin.com/in/karanupd12)
-- **GitHub:** [github.com/karanupadhyay1](https://github.com/karanupd12)
+- **LinkedIn:** [linkedin.com/in/karanupd12](https://linkedin.com/in/karanupd12)
+- **GitHub:** [github.com/karanupd12](https://github.com/karanupd12)
 
 ---
 
